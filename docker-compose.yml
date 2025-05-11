@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  productorderapp:
+    build: .
+    container_name: productorderapp
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    # override the default CMD if you want
+    command: node app.js
+    restart: unless-stopped

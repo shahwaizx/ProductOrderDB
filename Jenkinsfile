@@ -39,8 +39,12 @@ pipeline {
   }
 
   post {
-    always {
+    failure {
+      echo 'Build failed — tearing down containers.'
       sh 'docker compose down --remove-orphans'
+    }
+    success {
+      echo 'Build succeeded — containers are still running on port 5000.'
     }
   }
 }

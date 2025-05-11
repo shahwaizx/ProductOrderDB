@@ -13,8 +13,8 @@ WORKDIR /usr/src/app
 
 COPY --from=builder /usr/src/app ./
 
-ENV PORT=8080
-EXPOSE 8080
+ENV PORT=5000
+EXPOSE 5000
 
 # <-- use node directly, since npm start isn't configured
 CMD ["node", "app.js"]

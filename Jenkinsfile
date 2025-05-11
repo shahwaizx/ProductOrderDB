@@ -15,7 +15,7 @@ pipeline {
             sh "cd ${WORKSPACE_DIR} && git pull"
           } else {
             echo "Cloning repo into ${WORKSPACE_DIR}"
-            sh "git clone https://github.com/your-username/ProductOrderDB.git ${WORKSPACE_DIR}"
+            sh "git clone https://github.com/shahwaizx/ProductOrderDB.git ${WORKSPACE_DIR}"
           }
         }
       }

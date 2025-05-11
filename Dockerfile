@@ -1,5 +1,5 @@
 # 1. Build stage: install deps
-FROM node:18-alpine AS builder
+FROM node:18-slim AS builder
 WORKDIR /usr/src/app
 
 COPY package*.json ./
@@ -8,7 +8,7 @@ RUN npm ci --only=production
 COPY . .
 
 # 2. Runtime stage
-FROM node:18-alpine
+FROM node:18-slim
 WORKDIR /usr/src/app
 
 COPY --from=builder /usr/src/app ./

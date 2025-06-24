@@ -11,3 +11,4 @@ services:
     # override the default CMD if you want
     command: node app.js
     restart: unless-stopped
+
